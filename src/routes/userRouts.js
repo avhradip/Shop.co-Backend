@@ -4,6 +4,7 @@ const { signUp, login, editProfile, addToCart, removeCartItem, addorremovefromWi
 const upload = require("../middlewares/multer")
 const authenticateToken = require('../middlewares/auth')
 
+
 router.post('/signup', signUp)
 router.post('/login', login)
 router.post('/googlelogin', googlelogin)

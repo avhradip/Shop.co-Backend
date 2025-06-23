@@ -145,6 +145,10 @@ exports.resetPassword = async (req, res) => {
         const userId = req.user.id
         const { newPassword, conformPassword } = req.body;
 
+        if (!newPassword || !conformPassword) {
+            return res.status(400).json({ message:"newPassword and conformPassword not found..!"})
+        }
+
         if (newPassword !== conformPassword) {
             return res.status(400).json({ message: "Passwords do not match" });
         }
