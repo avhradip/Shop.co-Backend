@@ -108,7 +108,7 @@ exports.forgotPassword = async (req, res) => {
 
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "15m" });
 
-        const resetURL = `http://http://localhost:3000/reset-password/${token}`;
+        const resetURL = `https://golden-jelly-72b975.netlify.app/reset-password/${token}`;
 
         var transporter = nodemailer.createTransport({
             service: 'gmail',
